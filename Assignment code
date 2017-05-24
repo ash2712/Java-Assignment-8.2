@@ -1,0 +1,40 @@
+
+public class runnableClass {
+	public static void main(String[] args){
+		
+		Prime p = new Prime();
+		p.run();
+		
+	}
+}
+
+class Prime extends Thread implements Runnable
+{
+	
+	public void run()
+	{
+		try
+		{
+			for (int i = 2; i<100; i++) {//int i is equal to 2 as 2 is the smallest possible prime number
+				 boolean isPrimeNumber = true;
+				 // check to see if the number is prime
+				
+				 for (int j = 2; j < i; j++) {
+				
+					 if (i % j == 0){
+						 isPrimeNumber = false;
+						 break; // exit the inner for loop
+				
+				       	}
+					 }
+				 // print the number if prime
+				 if (isPrimeNumber) {
+					 System.out.println(i);
+				 }
+				
+		}
+	
+		}
+		catch (Exception e){}
+	}
+}
